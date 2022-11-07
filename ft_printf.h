@@ -17,10 +17,10 @@
 # include <stdarg.h>
 # include <unistd.h>
 
-int	ft_printf(const char *str, ...);
-int	ft_putnbr_id(int n);
-int	ft_putchar_c(char c);
-int	ft_percent(void);
+int		ft_printf(const char *str, ...);
+int		ft_putnbr_id(int n);
+int		ft_putchar_c(char c);
+int		ft_percent(void);
 size_t	ft_strlen(const char *s);
 
 #endif

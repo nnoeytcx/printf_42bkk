@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 09:58:31 by tpoungla          #+#    #+#             */
-/*   Updated: 2022/11/07 09:58:31 by tpoungla         ###   ########.fr       */
+/*   Created: 2022/07/04 23:16:39 by tpoungla          #+#    #+#             */
+/*   Updated: 2022/07/23 08:48:41 by tpoungla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdlib.h>
-# include <stdarg.h>
-# include <unistd.h>
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
 
-int	ft_printf(const char *str, ...);
-int	ft_putnbr_id(int n);
-int	ft_putchar_c(char c);
-int	ft_percent(void);
-size_t	ft_strlen(const char *s);
-
-#endif
+	if (*s == '\0' || s == NULL)
+		return (0);
+	i = 0;
+	while (s[i])
+	{
+		i++;
+	}
+	return (i);
+}

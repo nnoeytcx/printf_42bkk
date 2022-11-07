@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 09:55:35 by tpoungla          #+#    #+#             */
-/*   Updated: 2022/11/07 09:55:35 by tpoungla         ###   ########.fr       */
+/*   Created: 2022/11/08 00:29:21 by tpoungla          #+#    #+#             */
+/*   Updated: 2022/11/08 00:29:21 by tpoungla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *str, ...)
+int	ft_putnbr_u(unsigned int n)
 {
-/**	va_list	args;
-	int	i;
+	char	i;
+	unsigned long	num;
+	int		l;
 
-	i = 0;
-	if (!*str)
-		return (0);
-	va_start(args, str);
-	while (*str != '\0')
-	{
-		if (*str == '%')
-		{
-			i = printf_tag(str, args, i);
-			str++;
-		}
-		else
-			i += write(1, str, 1);
-		str++;
-	}
-	va_end (args);
-	return (i);*/
-	va_list args;
-	int	i;
-
-	i = 0;
-	
+	l = 0;
+	num = (long)n;
+	if (num >= 10)
+		l += ft_putnbr_id(num / 10);
+	i = (num % 10) + '0';
+	l += write(1, &i, 1);
+	return (l);
 }

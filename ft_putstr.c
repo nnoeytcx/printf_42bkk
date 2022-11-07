@@ -23,5 +23,6 @@ int	ft_putstr_s(char *s)
 		return (6);
 	}
 	write(1, s, ft_strlen(s));
+    i += ft_strlen(s);
 	return (i);
 }

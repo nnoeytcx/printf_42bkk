@@ -22,6 +22,6 @@ int		ft_putnbr_id(int n);
 int		ft_putchar_c(char c);
 int		ft_percent(void);
 size_t	ft_strlen(const char *s);
-void	ft_putstr_s(char *s);
+int		ft_putstr_s(char *s);
 
 #endif

@@ -18,13 +18,14 @@
 # include <unistd.h>
 
 int		ft_printf(const char *str, ...);
+size_t	ft_strlen(const char *s);
 int		ft_putnbr_id(int n);
 int		ft_putchar_c(char c);
 int		ft_percent(void);
-size_t	ft_strlen(const char *s);
 int		ft_putstr_s(char *s);
 int		ft_putnbr_u(unsigned int n);
 int		ft_putnbr_lx16(unsigned int n);
 int		ft_putnbr_ux16(unsigned int n);
+int		ft_putnbr_p(unsigned long n);
 
 #endif

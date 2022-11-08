@@ -14,15 +14,15 @@
 
 int	ft_putnbr_u(unsigned int n)
 {
-	char			i;
+	char			c;
 	unsigned long	num;
-	int				l;
+	int				i;
 
-	l = 0;
+	i = 0;
 	num = (long)n;
 	if (num >= 10)
-		l += ft_putnbr_id(num / 10);
-	i = (num % 10) + '0';
-	l += write(1, &i, 1);
-	return (l);
+		i += ft_putnbr_id(num / 10);
+	c = (num % 10) + '0';
+	i += write(1, &c, 1);
+	return (i);
 }

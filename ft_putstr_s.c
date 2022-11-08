@@ -19,10 +19,10 @@ int	ft_putstr_s(char *s)
 	i = 0;
 	if (s == NULL)
 	{
-		write(1, "(null", 6);
+		write(1, "(null)", 6);
 		return (6);
 	}
 	write(1, s, ft_strlen(s));
-	i += ft_strlen(s);
+	i = ft_strlen(s);
 	return (i);
 }

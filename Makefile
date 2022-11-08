@@ -14,7 +14,7 @@ NAME = libftprintf.a
 
 FLAGS = -Wall  -Wextra -Werror
 
-SRCS = ft_putnbr.c ft_putchar.c ft_percent.c ft_strlen.c ft_putstr.c ft_putnbr_u.c
+SRCS = ft_putnbr.c ft_putchar.c ft_percent.c ft_strlen.c ft_putstr.c ft_putnbr_u.c ft_putnbr_lx16.c ft_putnbr_ux16.c
 
 OBJS := $(SRCS:.c=.o)
 

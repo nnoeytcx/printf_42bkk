@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_lx16.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpoungla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 14:29:37 by tpoungla          #+#    #+#             */
-/*   Updated: 2022/11/07 14:29:37 by tpoungla         ###   ########.fr       */
+/*   Created: 2022/11/08 14:19:00 by tpoungla          #+#    #+#             */
+/*   Updated: 2022/11/08 14:19:00 by tpoungla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr_s(char *s)
+int	ft_putnbr_lx16(unsigned int n)
 {
-	int	i;
+	unsigned int	num;
+	int				i;
+	char			c;
 
 	i = 0;
-	if (s == NULL)
-	{
-		write(1, "(null", 6);
-		return (6);
-	}
-	write(1, s, ft_strlen(s));
-	i += ft_strlen(s);
+	num = n;
+	if (num >= 16)
+		i += ft_putnbr_lx16(num / 16);
+	if (num % 16 >= 10)
+		c = (num % 16) + 87;
+	else
+		c = (num % 16) + 48;
+	i += write(1, &c, 1);
 	return (i);
 }

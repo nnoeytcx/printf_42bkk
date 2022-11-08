@@ -14,9 +14,9 @@
 
 int	ft_putnbr_u(unsigned int n)
 {
-	char	i;
+	char			i;
 	unsigned long	num;
-	int		l;
+	int				l;
 
 	l = 0;
 	num = (long)n;

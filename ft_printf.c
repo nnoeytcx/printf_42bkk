@@ -33,6 +33,7 @@ int	ft_check(va_list args, const char c)
 		return (ft_putnbr_ux16(va_arg(args, unsigned int)));
 	else if (c == '%')
 		return (ft_percent());
+	return (0);
 }
 
 int	ft_printf(const char *str, ...)

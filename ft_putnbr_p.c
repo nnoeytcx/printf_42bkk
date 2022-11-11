@@ -21,7 +21,7 @@ int	ft_putnbr_p(unsigned long n)
 	i = 0;
 	num = n;
 	if (num >= 16)
-		i += ft_putnbr_lx16(num / 16);
+		i += ft_putnbr_p(num / 16);
 	if (num % 16 >= 10)
 		c = (num % 16) + 87;
 	else

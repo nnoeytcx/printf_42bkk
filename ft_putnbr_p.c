@@ -14,7 +14,7 @@
 
 int	ft_putnbr_p(unsigned long n)
 {
-	unsigned int	num;
+	unsigned long	num;
 	int				i;
 	char			c;
 

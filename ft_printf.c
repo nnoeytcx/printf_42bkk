@@ -12,31 +12,49 @@
 
 #include "ft_printf.h"
 
+int	ft_check(va_list args, const char c)
+{
+	if (c == 'c')
+		return (ft_putchar_c(va_arg(args, int)));
+	else if (c == 's')
+		return (ft_putstr_s(va_arg(args, char *)));
+	else if (c == 'p')
+	{
+		write(1, "0x", 2);
+		return (ft_putnbr_p(va_arg(args, unsigned long)) + 2);
+	}
+	else if (c == 'd' || c == 'i')
+		return (ft_putnbr_id(va_arg(args, int)));
+	else if (c == 'u')
+		return (ft_putnbr_u(va_arg(args, unsigned int)));
+	else if (c == 'x')
+		return (ft_putnbr_lx16(va_arg(args, unsigned int)));
+	else if (c == 'X')
+		return (ft_putnbr_ux16(va_arg(args, unsigned int)));
+	else if (c == '%')
+		return (ft_percent());
+}
+
 int	ft_printf(const char *str, ...)
 {
-/**	va_list	args;
-	int	i;
+	va_list	args;
+	int		i;
 
 	i = 0;
 	if (!*str)
 		return (0);
 	va_start(args, str);
-	while (*str != '\0')
+	while (*str)
 	{
 		if (*str == '%')
 		{
-			i = printf_tag(str, args, i);
+			i += ft_check(args, *(str + 1));
 			str++;
 		}
 		else
 			i += write(1, str, 1);
 		str++;
 	}
-	va_end (args);
-	return (i);*/
-	va_list args;
-	int	i;
-
-	i = 0;
-	
+	va_end(args);
+	return (i);
 }
